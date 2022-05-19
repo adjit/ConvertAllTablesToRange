@@ -42,18 +42,19 @@
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ribbon1))
-        Me.convertRangeTab = Me.Factory.CreateRibbonTab
+        Me.msAddInTab = Me.Factory.CreateRibbonTab
         Me.rangeRibbonGroup = Me.Factory.CreateRibbonGroup
         Me.Button1 = Me.Factory.CreateRibbonButton
-        Me.convertRangeTab.SuspendLayout()
+        Me.msAddInTab.SuspendLayout()
         Me.rangeRibbonGroup.SuspendLayout()
         Me.SuspendLayout()
         '
-        'convertRangeTab
+        'msAddInTab
         '
-        Me.convertRangeTab.Groups.Add(Me.rangeRibbonGroup)
-        Me.convertRangeTab.Label = "Convert Tables To Range"
-        Me.convertRangeTab.Name = "convertRangeTab"
+        Me.msAddInTab.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office
+        Me.msAddInTab.Groups.Add(Me.rangeRibbonGroup)
+        Me.msAddInTab.Label = "TabAddIns"
+        Me.msAddInTab.Name = "msAddInTab"
         '
         'rangeRibbonGroup
         '
@@ -74,16 +75,16 @@
         '
         Me.Name = "Ribbon1"
         Me.RibbonType = "Microsoft.Excel.Workbook"
-        Me.Tabs.Add(Me.convertRangeTab)
-        Me.convertRangeTab.ResumeLayout(False)
-        Me.convertRangeTab.PerformLayout()
+        Me.Tabs.Add(Me.msAddInTab)
+        Me.msAddInTab.ResumeLayout(False)
+        Me.msAddInTab.PerformLayout()
         Me.rangeRibbonGroup.ResumeLayout(False)
         Me.rangeRibbonGroup.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents convertRangeTab As Microsoft.Office.Tools.Ribbon.RibbonTab
+    Friend WithEvents msAddInTab As Microsoft.Office.Tools.Ribbon.RibbonTab
     Friend WithEvents rangeRibbonGroup As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents Button1 As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
